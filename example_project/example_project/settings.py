@@ -29,8 +29,65 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# TODO : DRF에서 사용 가능한 기본 옵션들(공식 Django Rest Framework 문서 참조) Document 확인
+# 이 예시에서는 기본 권한 클래스를 IsAuthenticated로 설정
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ],
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 10
+# }
+
+# 기본 렌더러 클래스를 지정, API 응답이 어떤 형식으로 직렬화 될지 결정
+# REST_FRAMEWORK = {
+#     'DEFAULT_RENDERER_CLASSES': [
+#         'rest_framework.renderers.JSONRenderer',
+#         'rest_framework.renderers.BrowsableAPIRenderer',
+#     ]
+# }
+
+# API 뷰에 적용되는 접근 제어 규칙을 결정
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#     ]
+# }
+
+# API 응답의 페이지네이션에 사용되는 기본 페이지네이션 클래스를 설정
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 10,
+# }
+
+# 이 옵션은 API 데이터 필터링에 사용되는 기본 필터 백엔드를 지정
+# REST_FRAMEWORK = {
+#     'DEFAULT_FILTER_BACKENDS': [
+#         'rest_framework.filters.SearchFilter',
+#         'rest_framework.filters.OrderingFilter',
+#     ]
+# }
+
+# 이 옵션은 요청 제한에 사용되는 기본 제한 클래스를 설정
+# REST_FRAMEWORK = {
+#     'DEFAULT_THROTTLE_CLASSES': [
+#         'rest_framework.throttling.AnonRateThrottle',
+#         'rest_framework.throttling.UserRateThrottle',
+#     ],
+#     'DEFAULT_THROTTLE_RATES': {
+#         'anon': '100/day',
+#         'user': '1000/day',
+#     }
+# }
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'my_api.apps.MyApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
