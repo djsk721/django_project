@@ -1,8 +1,9 @@
-from django.urls import path, include
-from . import views
-from rest_framework import urls
+from django.contrib import admin
+from django.urls import path
 
-urlpatterns =[
-    # path('signup/', views.UserCreate.as_view()),
-    # path('api-auth/', include('rest_framework.urls')),
- ]
+from .views import getUser, getUserForId
+
+urlpatterns = [
+    path('', getUser),
+    path('<int:id>/', getUserForId)
+]

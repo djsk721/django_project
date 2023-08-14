@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "drf_yasg",
+    "user",
     "rest_framework",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -79,7 +81,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'django_test',
+        'USER': 'root',
+        'PASSWORD': '13131313',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
